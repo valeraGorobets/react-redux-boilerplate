@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import CityList from './../../Container/CityList';
 import './styles.css';
 
 export default class Main extends Component {
@@ -6,7 +7,7 @@ export default class Main extends Component {
     return ( 
       <div className="container">
         <aside>
-          aside
+          <CityList />
         </aside>
         <section>
           section
