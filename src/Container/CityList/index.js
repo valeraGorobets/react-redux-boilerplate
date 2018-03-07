@@ -6,7 +6,7 @@ export default class CityList extends Component {
   constructor(){
     super();
     this.state = {
-      availableCities: ['Minsk', 'London', 'Moscow']
+      availableCities: ['Minsk', 'London', 'Moscow', 'New York']
     }
   }
   

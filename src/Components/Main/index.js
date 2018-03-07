@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import CityList from './../../Container/CityList';
+import WeatherList from './../../Container/WeatherList';
 import './styles.css';
 
 export default class Main extends Component {
@@ -10,7 +11,7 @@ export default class Main extends Component {
           <CityList />
         </aside>
         <section>
-          section
+          <WeatherList />
         </section>
       </div>
     );
