@@ -5,9 +5,11 @@ const citiesToFollow = (state = [], action) => {
         ...state,
         {
           id: action.id,
-          city: action.city,
+          name: action.city,
         }
       ]
+    case 'DELETE_CITY':
+      return state.filter(city => city.id !== action.id)
     default:
       return state
   }

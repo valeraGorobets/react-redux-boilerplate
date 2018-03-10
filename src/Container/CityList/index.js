@@ -1,59 +1,38 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 import City from './../../Components/City';
 import './styles.css';
 
-export default class CityList extends Component {
-  constructor(){
-    super();
-    this.state = {
-      availableCities: ['Minsk', 'London', 'Moscow', 'New York']
-    }
-  }
-  
+class CityList extends Component {
   render() {
-    return ( 
+    return (
       <div>
-        {this.state.availableCities.map((city) => {
-          return <City city={city} key={city}/>
+        {this.props.citiesToFollow.map((city) => {
+          return <City name={city.name} key={city.id} onClick={() => this.props.onCityClick(city.id)}/>
         })}
       </div>
     );
   }
 }
 
-//import { connect } from 'react-redux'
-// import { toggleTodo } from '../actions'
-// import TodoList from '../components/TodoList'
-//  
-// const getVisibleTodos = (todos, filter) => {
-//   switch (filter) {
-//     case 'SHOW_COMPLETED':
-//       return todos.filter(t => t.completed)
-//     case 'SHOW_ACTIVE':
-//       return todos.filter(t => !t.completed)
-//     case 'SHOW_ALL':
-//     default:
-//       return todos
-//   }
-// }
-//  
-// const mapStateToProps = state => {
-//   return {
-//     todos: getVisibleTodos(state.todos, state.visibilityFilter)
-//   }
-// }
-//  
-// const mapDispatchToProps = dispatch => {
-//   return {
-//     onTodoClick: id => {
-//       dispatch(toggleTodo(id))
-//     }
-//   }
-// }
-//  
-// const VisibleTodoList = connect(
-//   mapStateToProps,
-//   mapDispatchToProps
-// )(TodoList)
-//  
-// export default VisibleTodoList
+const mapStateToProps = state => {
+  return {
+    citiesToFollow: state.citiesToFollow
+  }
+}
+ 
+const mapDispatchToProps = dispatch => {
+  return {
+    onCityClick: (id) => {
+      dispatch({
+        type: 'DELETE_CITY',
+        id
+      })
+    }
+  }
+}
+ 
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(CityList)
