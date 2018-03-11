@@ -1,10 +1,10 @@
 import { combineReducers } from 'redux';
 import citiesToFollow from './citiesToFollow';
-import selectCity from './selectCity';
+import ditailsOfCityId from './ditailsOfCityId';
  
 const weatherApp = combineReducers({
   citiesToFollow,
-  selectCity
+  ditailsOfCityId
 })
  
 export default weatherApp;

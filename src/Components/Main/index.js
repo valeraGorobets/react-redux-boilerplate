@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
-import AddCity from './../../Container/AddCity';
-import CityList from './../../Container/CityList';
-import WeatherList from './../../Container/WeatherList';
+import { Link, Route, Switch, Redirect } from 'react-router-dom'
+import AddCity from './../AddCity';
+import CityList from './../CityList';
+import WeatherList from './../WeatherList';
+import Details from './../Details';
 import './styles.css';
 
 export default class Main extends Component {
@@ -13,7 +15,17 @@ export default class Main extends Component {
           <CityList />
         </aside>
         <section>
-          <WeatherList />
+          <nav>
+            <ul>
+              <li><Link to='/overview'>Overview</Link></li>
+              <li><Link to='/details'>Details</Link></li>
+            </ul>
+          </nav>
+          <Switch>
+            <Route path='/overview' component={WeatherList}/>
+            <Route path='/details' component={Details}/>
+            <Redirect to='/overview' />
+          </Switch>
         </section>
       </div>
     );

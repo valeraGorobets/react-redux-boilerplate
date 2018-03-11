@@ -17,9 +17,7 @@ export default class Weather extends Component {
 
   constructor(){
     super();
-    this.state = {
-      city: ''
-    }
+    this.state = {}
   }
 
   componentDidMount() {
