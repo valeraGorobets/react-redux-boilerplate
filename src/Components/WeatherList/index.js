@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import Weather from './../../Components/Weather';
+import Weather from './../Weather';
 import requestWeather from './../../Services/YahooWeatherService';
 import './styles.css';
 
