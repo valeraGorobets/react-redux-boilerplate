@@ -1,15 +1,8 @@
-let nextCityId = 0
-export const addCity = city => {
+let nextId = 0
+export const someAction = obj => {
   return {
-    type: 'ADD_CITY',
-    id: nextCityId++,
-    city
-  }
-}
-
-export const switchCity = city => {
-  return {
-    type: 'SWITCH_CITY',
-    city
+    type: 'SOME_ACTION',
+    id: nextId++,
+    obj
   }
 }

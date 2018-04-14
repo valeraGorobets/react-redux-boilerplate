@@ -5,7 +5,7 @@ export default class Header extends Component {
   render() {
     return ( 
       <header>
-        <h1 className="text-center">Weather App</h1>
+        <h1 className="text-center">Template</h1>
       </header>
     );
   }
