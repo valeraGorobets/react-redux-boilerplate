@@ -1,1 +1,1 @@
-## Weather App on React
+## Create any react-redux application with this boilerplate.
